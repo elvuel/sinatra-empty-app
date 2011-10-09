@@ -1,0 +1,4 @@
+==Quick start a sinatra app, not use some other sinatra-app generators or start by hand...
+==Tag v1.0: empty app with test frameworks
+    features: cucumber capybara minitest
+    spec: minitest rack/test
