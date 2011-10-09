@@ -1,4 +1,5 @@
 .bundle
 .idea/
+doc/
 coverage/
 Gemfile.lock
