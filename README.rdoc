@@ -2,3 +2,11 @@
 ==Tag v1.0: empty app with test frameworks
     features: cucumber capybara minitest
     spec: minitest rack/test
+==Tag v1.0.1 add coffeescripts evergreen
+    Install coffeescript 1.1.2 nodejs 0.4 above, Ubuntu 11.04 user NOTE: do not use apt-get to install, coffee-script(0.7.1) nodejs(0.2.6) == both outdated!
+    Ubuntu user see : http://opinionated-programmer.com/2010/12/installing-coffeescript-on-debian-or-ubuntu/
+
+    Rake task :cc [Compile coffee-scripts default options -b(bare)]
+    Fix evergreen with Jquery dom ready no effect bug(require 'js_file' on top of *_spec.js), add ResourceRunExt to spec_helper.js.
+
+
