@@ -6,6 +6,10 @@ describe('greeting', function() {
   it("should see greeting", function() {
     // we can use App.setting because we compile coffee-script with -b
     expect($("#main").text()).toEqual("Sinatra say:" + App.greeting);
+    expect($("#main_click").text()).toEqual("");
+    $("#main").trigger("click");
+    expect($("#main_click").text()).toEqual("clicked");
+
   });
 });
 

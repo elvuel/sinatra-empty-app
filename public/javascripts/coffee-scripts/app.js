@@ -3,5 +3,8 @@ App = {
   greeting: "hello!"
 };
 $(function() {
-  return $("#main").append(App.greeting);
+  $("#main").append(App.greeting);
+  return $("#main").click(function() {
+    return $("#main_click").text("clicked");
+  });
 });
