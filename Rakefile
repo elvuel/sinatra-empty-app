@@ -13,7 +13,16 @@ Cucumber::Rake::Task.new
 desc "Compile coffee-script files"
 task :cc do
   puts 'coffee-script files compiling...'
-  sh "coffee -b -c -o public/javascripts/coffee-scripts/ coffee-scripts/*.coffee"
+  coffees_root = File.join(File.dirname(__FILE__), "coffee-scripts", '/')
+  Dir.glob(File.join(File.dirname(__FILE__), "coffee-scripts", "**", "*.coffee")).each do |file|
+    basename = File.basename(file)
+    output_folder = file.gsub(%r(\A#{coffees_root}), '').gsub(basename, "")
+    if File.read(file)[0..4] == "#bare"
+      sh "coffee -b -c -o public/javascripts/coffee-scripts/#{output_folder} #{file}"
+    else
+      sh "coffee -c -o public/javascripts/coffee-scripts/#{output_folder} #{file}"
+    end
+  end
 end
 
 desc 'Runs jasmine tests'
